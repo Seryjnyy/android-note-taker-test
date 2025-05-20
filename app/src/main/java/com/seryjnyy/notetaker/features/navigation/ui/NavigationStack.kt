@@ -8,7 +8,7 @@ import androidx.navigation.toRoute
 import com.seryjnyy.notetaker.features.navigation.NoteDetail
 import com.seryjnyy.notetaker.features.navigation.NoteList
 import com.seryjnyy.notetaker.features.notes.ui.NoteDetailScreen
-import com.seryjnyy.notetaker.features.notes.ui.NotesListScreen
+import com.seryjnyy.notetaker.features.notes.ui.list.NotesListScreen
 
 @Composable
 fun NavigationStack(
