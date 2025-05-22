@@ -4,12 +4,18 @@ import com.seryjnyy.notetaker.data.local.db.entity.NoteEntity
 
 fun NoteEntity.toNote() : Note{
     return Note(
-        id = id
+        id = id,
+        title = title,
+        content = content,
+        timestampEpochMillis = timestampEpochMillis
     )
 }
 
 fun Note.toNoteEntity() : NoteEntity{
     return NoteEntity(
-        id = id
+        id = id,
+        title = title,
+        content = content,
+        timestampEpochMillis = timestampEpochMillis
     )
 }
