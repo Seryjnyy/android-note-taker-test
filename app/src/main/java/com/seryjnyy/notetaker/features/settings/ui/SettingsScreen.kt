@@ -27,8 +27,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.seryjnyy.notetaker.R
+import com.seryjnyy.notetaker.features.navigation.SettingSyncNav
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -67,7 +70,22 @@ fun SettingsScreen(
             contentPadding = PaddingValues(vertical = 16.dp),
 
             ) {
-
+            item {
+                SettingListNavItem(
+                    title = "Sync",
+                    desc = "Manage sync, login, sign out",
+                    icon = {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_sync),
+                            contentDescription = "Back",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    },
+                    onSelect = {
+                        navController.navigate(SettingSyncNav)
+                    }
+                )
+            }
         }
     }
 }

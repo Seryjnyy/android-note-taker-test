@@ -10,3 +10,9 @@ class NoteDetail(val noteId: Long?)
 
 @Serializable
 class Settings
+
+@Serializable
+object SettingSyncNav
+
+@Serializable
+class SettingSync
