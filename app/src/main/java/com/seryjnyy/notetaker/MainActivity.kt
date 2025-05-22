@@ -14,7 +14,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            NoteTakerTheme {
+            NoteTakerTheme(
+                dynamicColor = false
+            ) {
                 NavigationStack()
             }
         }
