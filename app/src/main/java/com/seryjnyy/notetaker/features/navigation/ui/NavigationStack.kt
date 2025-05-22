@@ -8,7 +8,9 @@ import androidx.navigation.toRoute
 import com.seryjnyy.notetaker.features.navigation.NoteDetail
 import com.seryjnyy.notetaker.features.navigation.NoteList
 import com.seryjnyy.notetaker.features.notes.ui.NoteDetailScreen
+import com.seryjnyy.notetaker.features.navigation.Settings
 import com.seryjnyy.notetaker.features.notes.ui.list.NotesListScreen
+import com.seryjnyy.notetaker.features.settings.ui.SettingsScreen
 
 @Composable
 fun NavigationStack(
@@ -29,6 +31,12 @@ val navController = rememberNavController()
             NoteDetailScreen(
                 noteId = noteId,
                 navigateBack = { navController.popBackStack() }
+            )
+        }
+
+        composable<Settings> {
+            SettingsScreen(
+                navController = navController
             )
         }
     }

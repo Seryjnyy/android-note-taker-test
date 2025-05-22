@@ -7,3 +7,6 @@ class NoteList
 
 @Serializable
 class NoteDetail(val noteId: Long?)
+
+@Serializable
+class Settings
