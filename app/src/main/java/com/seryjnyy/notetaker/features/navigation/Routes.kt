@@ -16,3 +16,6 @@ object SettingSyncNav
 
 @Serializable
 class SettingSync
+
+@Serializable
+object SettingSyncLogin
