@@ -2,6 +2,7 @@ package com.seryjnyy.notetaker.data.local.db.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
+import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Upsert
 import com.seryjnyy.notetaker.data.local.db.entity.NoteEntity
@@ -17,6 +18,9 @@ interface NoteDao {
 
     @Upsert
     suspend fun upsertNote(note: NoteEntity)
+
+    @Insert
+    suspend fun insertNote(note:NoteEntity)
 
     @Delete
     suspend fun deleteNote(note: NoteEntity)

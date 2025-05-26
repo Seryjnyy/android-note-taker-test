@@ -1,6 +1,8 @@
 package com.seryjnyy.notetaker.data.repository
 
+import com.seryjnyy.notetaker.data.domain.model.Note
 import com.seryjnyy.notetaker.data.domain.model.toNote
+import com.seryjnyy.notetaker.data.domain.model.toNoteEntity
 import com.seryjnyy.notetaker.data.local.db.dao.NoteDao
 import com.seryjnyy.notetaker.data.local.db.entity.NoteEntity
 import kotlinx.coroutines.flow.map
@@ -13,6 +15,8 @@ class NoteRepository(
     fun observeNote(id: Long) = noteDao.observeNote(id).map { it?.toNote() }
 
     suspend fun upsertNote(note: NoteEntity) = noteDao.upsertNote(note)
+
+    suspend fun insertNote(note: Note) = noteDao.insertNote(note.toNoteEntity())
 
     suspend fun deleteNote(note: NoteEntity) = noteDao.deleteNote(note)
 
