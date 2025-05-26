@@ -1,13 +1,10 @@
 package com.seryjnyy.notetaker.features.navigation.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -17,6 +14,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
 import androidx.navigation.toRoute
 import com.seryjnyy.notetaker.R
+import com.seryjnyy.notetaker.features.auth.AuthState
+import com.seryjnyy.notetaker.features.auth.AuthViewModel
 import com.seryjnyy.notetaker.features.navigation.NoteDetail
 import com.seryjnyy.notetaker.features.navigation.NoteList
 import com.seryjnyy.notetaker.features.navigation.SettingSync
@@ -25,8 +24,6 @@ import com.seryjnyy.notetaker.features.navigation.SettingSyncNav
 import com.seryjnyy.notetaker.features.navigation.Settings
 import com.seryjnyy.notetaker.features.notes.ui.detail.NoteDetailScreen
 import com.seryjnyy.notetaker.features.notes.ui.list.NotesListScreen
-import com.seryjnyy.notetaker.features.auth.AuthState
-import com.seryjnyy.notetaker.features.auth.AuthViewModel
 import com.seryjnyy.notetaker.features.settings.ui.SettingPage
 import com.seryjnyy.notetaker.features.settings.ui.SettingSyncAccountSection
 import com.seryjnyy.notetaker.features.settings.ui.SettingSyncLoginSection
@@ -45,7 +42,8 @@ val navController = rememberNavController()
         composable<NoteList> {
             NotesListScreen(
                 navigateToNewNote = { navController.navigate(NoteDetail(null)) },
-                navigateToNoteDetail = { noteId -> navController.navigate(NoteDetail(noteId)) }
+                navigateToNoteDetail = { noteId -> navController.navigate(NoteDetail(noteId)) },
+                navigateToSettings = { navController.navigate(Settings()) }
             )
     }
         composable<NoteDetail> {
