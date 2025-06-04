@@ -1,5 +1,6 @@
 [versions]
 agp = "8.8.0"
+kotest = "5.9.1"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -8,6 +9,7 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.9.0"
 activityCompose = "1.10.1"
 composeBom = "2024.04.01"
+mockk = "1.14.2"
 navigationCompose = "2.8.9"
 serializationPlugin = "2.0.21"
 serializationJson = "1.7.3"
@@ -52,6 +54,7 @@ hilt-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref =
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-hilt-common = { group = "androidx.hilt", name = "hilt-common", version.ref = "hiltCommon" }
 # JSON serialization library, works with the Kotlin serialization plugin
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serializationJson" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 # Firebase
@@ -62,7 +65,11 @@ androidx-credentials = { module = "androidx.credentials:credentials", version.re
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
+# Fonts
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
+# Kotest
+kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -77,3 +84,6 @@ devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 # Google services
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
+
+[bundles]
+kotest = ["kotest-runner"]

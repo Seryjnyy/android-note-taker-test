@@ -13,6 +13,11 @@ android {
     namespace = "com.seryjnyy.notetaker"
     compileSdk = 35
 
+    testOptions{
+        unitTests.all {
+            it.useJUnitPlatform()
+        }
+    }
     defaultConfig {
         applicationId = "com.seryjnyy.notetaker"
         minSdk = 26
@@ -92,6 +97,17 @@ dependencies {
 
     // non android version of hilt-compiler (not sure of the difference but this one is needed for hilt)
     ksp(libs.hilt.compiler)
+
+    // Kotest
+    testImplementation(libs.bundles.kotest)
+    // Needed because kotest uses reflection
+    implementation(kotlin("reflect"))
+    // This doesn't fix the NoClassDefFoundError in tests
+    //    testImplementation(kotlin("reflect"))
+
+    // Mockk
+    testImplementation(libs.mockk)
+
 }
 
 room {
