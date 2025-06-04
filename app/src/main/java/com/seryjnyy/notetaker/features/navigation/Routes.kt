@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 class NoteList
 
 @Serializable
-class NoteDetail(val noteId: Long?)
+class NoteDetail(val noteId: String?)
 
 @Serializable
 class Settings
