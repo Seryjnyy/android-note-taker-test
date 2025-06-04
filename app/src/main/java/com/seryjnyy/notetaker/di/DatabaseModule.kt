@@ -2,9 +2,7 @@ package com.seryjnyy.notetaker.di
 
 import android.app.Application
 import androidx.room.Room
-import com.seryjnyy.notetaker.data.local.db.AppDatabase
-import com.seryjnyy.notetaker.data.local.db.dao.NoteDao
-import com.seryjnyy.notetaker.data.repository.NoteRepository
+import com.seryjnyy.notetaker.data.datasource.local.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object DatabaseModule {
     @Provides
     @Singleton
     fun provideAppDatabase(application: Application): AppDatabase {
@@ -26,7 +24,4 @@ object AppModule {
 
     @Provides
     fun provideNoteDao(appDatabase: AppDatabase) = appDatabase.noteDao()
-
-    @Provides
-    fun provideNoteRepository(noteDao: NoteDao) = NoteRepository(noteDao)
 }
